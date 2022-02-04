@@ -1,20 +1,21 @@
-import React from 'react';
-import './App.css';
-import { useDispatch } from 'react-redux';
-import { getProductAsync } from './features/product/productSlice';
+import React, {useEffect} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getProductAsync, selectProduct } from './features/product/productSlice';
 import { ProductWidget } from './features/product/ProductWidget';
 
 function App() {
   const dispatch = useDispatch();
+  const product = useSelector(selectProduct);
+
+  useEffect(() => {
+    dispatch(getProductAsync());
+  }, []) 
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <ProductWidget />
-        <button
-          onClick={() => dispatch(getProductAsync())}
-        >
-          Fetch product
-        </button>
+    <div>
+      <header>
+        <ProductWidget product={product}/>
       </header>
     </div>
   );
