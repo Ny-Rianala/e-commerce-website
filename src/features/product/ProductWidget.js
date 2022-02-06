@@ -10,7 +10,7 @@ const numOfStarsGray= Array.apply(null, Array(MAX_STARS -rating)).map(function (
 
   return (
     <div className="flex justify-center mt-20">
-        <div className="container h-441px min-w-324  pl-12 pt-11 pr-10 pb-28 border w-80 drop-shadow-xl bg-white">
+        <div className="container h-441px min-w-324  pl-12 pt-11 pr-10 pb-24 border w-80 drop-shadow-xl bg-white">
             <div>
                 <h1 className="font-medium text-2xl">{product?.title}</h1>
                 <h2 className="uppercase font-medium text-base pt-4">{product?.category}</h2>
@@ -56,9 +56,11 @@ const numOfStarsGray= Array.apply(null, Array(MAX_STARS -rating)).map(function (
 
                 </div>
             </div>
-            <div>
-               <button>01</button>
-               <button className="bg-gray-300 py-2 px-4">Add to cart</button>
+            <div className="flex flex-row justify-between pt-10 mr-20">
+               <div className="relative inline-block rounded">
+                  <input type="number" minLength="01" maxLength="8" size="10" className="w-12 h-8 bg-gray-300 text-white outline-none text-center rounded-sm"/>
+               </div>
+               <button className="bg-dollarBill text-white text-xs font-semibold rounded py-px pl-5 pr-5">Add to cart</button>
             </div>
         </div>
     </div>

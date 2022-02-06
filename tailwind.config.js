@@ -12,7 +12,10 @@ module.exports = {
       },
       fill: {
         '#f9f8f6': '#f9f8f6'
-      } 
+      },
+      colors: {
+        'dollarBill': '#85bb65',
+      },
     },
   },
   plugins: [],
