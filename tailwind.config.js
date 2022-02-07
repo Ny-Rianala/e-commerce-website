@@ -11,14 +11,16 @@ module.exports = {
         '324px': '324px',
       },
       fill: {
-        '#f9f8f6': '#f9f8f6'
+        '#ECDB75': '#ECDB75',
+        '#F1EDEC': '#F1EDEC'
       },
       colors: {
-        'dollarBill': '#85bb65',
+        'dollarBill': '#B5CC93',
+        'gray': '#DFD6D5',
       },
       spacing: {
         '75px': '75px',
-      }
+      },
     },
   },
   plugins: [],

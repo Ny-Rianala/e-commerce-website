@@ -4,6 +4,7 @@ import { fetchProduct } from './productAPI';
 const initialState = {
   value: {},
   status: 'idle',
+  isLoading: false,
 };
 
 // The function below is called a thunk and allows us to perform async logic. It
@@ -26,17 +27,19 @@ export const productSlice = createSlice({
   initialState,
  
   reducers: {
-   
+    
   },
  
   extraReducers: (builder) => {
     builder
       .addCase(getProductAsync.pending, (state) => {
         state.status = 'loading';
+        state.isLoading = true;
       })
       .addCase(getProductAsync.fulfilled, (state, action) => {
         state.status = 'idle';
         state.value = action.payload;
+        state.isLoading = false;
       });
   },
 });
@@ -44,5 +47,6 @@ export const productSlice = createSlice({
 export const { } = productSlice.actions;
 
 export const selectProduct = (state) => state.product.value;
+export const selectLoading = (state) => state.product.isLoading;
 
 export default productSlice.reducer;
