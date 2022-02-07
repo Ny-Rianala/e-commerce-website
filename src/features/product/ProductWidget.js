@@ -56,7 +56,7 @@ const numOfStarsGray= Array.apply(null, Array(MAX_STARS -rating)).map(function (
 
                 </div>
             </div>
-            <div className="flex flex-row justify-between pt-10 mr-20">
+            <div className="flex flex-row justify-between pt-10 mr-75px">
                <div className="relative inline-block rounded">
                   <input type="number" minLength="01" maxLength="8" size="10" className="w-12 h-8 bg-gray-300 text-white outline-none text-center rounded-sm"/>
                </div>

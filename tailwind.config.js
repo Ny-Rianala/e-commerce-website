@@ -16,6 +16,9 @@ module.exports = {
       colors: {
         'dollarBill': '#85bb65',
       },
+      spacing: {
+        '75px': '75px',
+      }
     },
   },
   plugins: [],
