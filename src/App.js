@@ -13,11 +13,12 @@ function App() {
   }, []); 
 
 
-  return (
-    <div>
-      <header>
-        {loading ? <p className="text-base text-center">Loading...</p> : <ProductWidget product={product}/>}
-      </header>
+  return ( 
+    <div className="grid place-items-center h-screen bg-cover bg-center min-w-324"
+     style={{
+
+       "background-image": `linear-gradient(rgba(200, 200, 200, 0.4), rgba(200, 200, 200, 1)), url(${product?.image})`}}>
+        {loading ? <p className="text-base text-center">Loading...</p> : <ProductWidget product={product}/>}   
     </div>
   );
 }

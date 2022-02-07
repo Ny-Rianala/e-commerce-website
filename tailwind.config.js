@@ -15,8 +15,13 @@ module.exports = {
         '#F1EDEC': '#F1EDEC'
       },
       colors: {
+        'backgroundContainer': '#F2F2F2',
+        'headingColor': '#504A47',
+        'subHeadingColor': '#E4CDC3',
+        'paragraphColor': '#DED8D7',
         'dollarBill': '#B5CC93',
-        'gray': '#DFD6D5',
+        // 'grayStar': '#F2F2F2',
+        'gray': '#DDD5D3',
       },
       spacing: {
         '75px': '75px',
