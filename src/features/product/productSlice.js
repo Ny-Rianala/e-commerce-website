@@ -38,8 +38,6 @@ export const productSlice = createSlice({
   },
 });
 
-export const { } = productSlice.actions;
-
 export const selectProduct = (state) => state.product.value;
 export const selectLoading = (state) => state.product.status === 'loading';
 export const selectProductFetchError = (state) => state.product.error;
