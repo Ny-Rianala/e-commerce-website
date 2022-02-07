@@ -5,19 +5,13 @@ const initialState = {
   value: {},
   status: 'idle',
   isLoading: false,
+  error: null,
 };
 
-// The function below is called a thunk and allows us to perform async logic. It
-// can be dispatched like a regular action: `dispatch(incrementAsync(10))`. This
-// will call the thunk with the `dispatch` function as the first argument. Async
-// code can then be executed and other actions can be dispatched. Thunks are
-// typically used to make async requests.
 export const getProductAsync = createAsyncThunk(
   'product/fetchProduct',
   async (amount) => {
     const response = await fetchProduct(amount);
-    // The value we return becomes the `fulfilled` action payload
-    console.log(response);
     return response;
   }
 );
@@ -25,28 +19,29 @@ export const getProductAsync = createAsyncThunk(
 export const productSlice = createSlice({
   name: 'product',
   initialState,
- 
-  reducers: {
-    
-  },
- 
+
+  reducers: {},
+
   extraReducers: (builder) => {
     builder
       .addCase(getProductAsync.pending, (state) => {
         state.status = 'loading';
-        state.isLoading = true;
       })
       .addCase(getProductAsync.fulfilled, (state, action) => {
         state.status = 'idle';
         state.value = action.payload;
-        state.isLoading = false;
-      });
+      })
+      .addCase(getProductAsync.rejected, (state, { payload }) => {
+        state.error = payload || 'Error encountered';
+        state.status = 'idle'
+      })
   },
 });
 
 export const { } = productSlice.actions;
 
 export const selectProduct = (state) => state.product.value;
-export const selectLoading = (state) => state.product.isLoading;
+export const selectLoading = (state) => state.product.status === 'loading';
+export const selectProductFetchError = (state) => state.product.error;
 
 export default productSlice.reducer;

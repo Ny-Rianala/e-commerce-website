@@ -20,7 +20,7 @@ module.exports = {
       colors: {
         'backgroundContainer': '#F2F2F2',
         'headingColor': '#504A47',
-        'subHeadingColor': '#F7E3DA',
+        'subHeadingColor': '#DDD0CB',
         'paragraphColor': '#CEC6C3',
         'dollarBill': '#B5CC93',
         'gray': '#DDD5D3',
