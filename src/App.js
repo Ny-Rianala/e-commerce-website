@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getProductAsync(7));
-  }, []); 
+  }, [dispatch]); 
 
   const message = 'Error occured while loading the product';
 
@@ -19,7 +19,7 @@ function App() {
     <div className="grid place-items-center h-screen bg-cover bg-center"
      style={{
        "backgroundImage": `linear-gradient(rgba(200, 200, 200, 0.4), rgba(200, 200, 200, 1)), url(${product?.image})`}}>
-        { loading ?
+        { loading?
         <p className="text-base text-center">Loading...</p> : 
         error ? <p className="text-base text-center">{message}</p>:<ProductWidget product={product}/>}   
     </div>

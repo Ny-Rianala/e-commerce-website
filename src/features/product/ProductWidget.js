@@ -6,10 +6,9 @@ const MAX_STARS = 5;
 export function ProductWidget({ product }) {
   const rating = Math.round(Number(product?.rating?.rate)) | 0
 
-  const numOfStarsGold = Array.apply(null, Array(rating)).map(function () { })
-  const numOfStarsGray = Array.apply(null, Array(MAX_STARS - rating)).map(function () { })
-  
-
+  const goldStars = new Array(rating).fill('#ECDB75')
+  const grayStars = new Array(MAX_STARS - rating).fill("#DED6D5")
+  const allStars =  goldStars.concat(grayStars);
   return (
     <div className=" bg-#fbebee">
       <div className="container mx-auto bg-backgroundContainer h-470px min-w-324px w-344px pt-10 pl-12 pb-24 pr-12 drop-shadow-xl">
@@ -22,12 +21,9 @@ export function ProductWidget({ product }) {
         </div>
         <div className="flex flex-row justify-between pt-12">
           <div className="flex flex-row">
-            {numOfStarsGold.map((_, i) => <div key={`${i}-gold-${product?.id}`}>
-            <StarIcon />
+            {allStars.map((color, i) => <div key={`${i}-${color}-${product?.id}`}>
+            <StarIcon starColor={color}/>
             </div>)}
-            {numOfStarsGray.map((_, i) => <div key={`${i}-gray-${product.id}`}> 
-            <StarIcon starColor="#DED6D5"/>
-              </div>)}
           </div>
           <p className="text-0.6rem text-paragraphColor">
             {`(${product?.rating?.rate} - ${product?.rating?.count} reviews)`}
