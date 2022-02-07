@@ -5,7 +5,10 @@ module.exports = {
   theme: {
     extend: {
       height: {
-        "441px": '441px',
+        "470px": '470px',
+      },
+      width: {
+        '344px': '344px',
       },
       minWidth: {
         '324px': '324px',
@@ -23,11 +26,14 @@ module.exports = {
         'gray': '#DDD5D3',
       },
       spacing: {
-        '75px': '75px',
+        '71px': '71px',
+        '704px': '704px',
+        '8px': '8px',
+        '4.45rem': '4.45rem',
       },
       fontSize: {
         '0.6rem': '0.6rem' 
-      }
+      },
     },
   },
   plugins: [],
