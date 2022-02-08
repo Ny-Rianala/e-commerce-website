@@ -38,7 +38,7 @@ export function ProductWidget({ product }) {
              style={numberInputStyle}
               className="w-12 h-8 bg-gray text-red outline-none text-center rounded-sm pt-0.5 pb-0.5" />
           </div>
-          <button className="bg-dollarBill text-white text-xs font-semibold rounded py-px pl-6 pr-6 ml-2">Add to cart</button>
+          <button onClick = {() => alert('Add to cart not implemented')} className="bg-dollarBill text-white text-xs font-semibold rounded py-px pl-6 pr-6 ml-2">Add to cart</button>
         </div>
         <p className="text-0.6rem text-paragraphColor mt-7">
           (*Lorem ipsum dolor sit amet,faucibus consectetur amet,faucibus consectetur,faucibus.)

@@ -4,7 +4,6 @@ import { fetchProduct } from './productAPI';
 const initialState = {
   value: {},
   status: 'idle',
-  isLoading: false,
   error: null,
 };
 
